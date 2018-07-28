@@ -40,3 +40,31 @@ h4 a {
   border-bottom: 1px solid skyblue;
   padding: 2px 4px;
 }
+
+h2 {
+  margin: auto;
+  font-size: 1.9em;
+}
+
+.wordCard {
+  display: block;
+  background-color: #eee;
+  padding: 10px;
+  margin: 15px 0;
+}
+
+.wordCard .top {
+  display: flex;
+  align-items: baseline;
+}
+
+.wordCard .title {
+  font-size: 1.5em;
+  font-weight: 900;
+  padding-right: 10px;
+}
+
+.wordCard .part-of-speech {
+  font-size: 1em;
+ font-style: italic;
+}
