@@ -43,7 +43,7 @@ h4 a {
 h4 a:hover {
   background-color: rgba(240, 240, 240, .8);
   border-bottom: 2px solid #00a8db;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
 h5 {
@@ -61,7 +61,7 @@ h5 a {
 h5 a:hover {
   background-color: rgba(240, 240, 240, .8);
   border-bottom: 2px solid #00a8db;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 h2 {
