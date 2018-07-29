@@ -43,8 +43,7 @@ class App extends Component {
         <div className="search-list">
           <h2>Search Results</h2>
           {
-
-            list.map(word => {
+            !isLoading && list.length > 0 ? list.filter(word => word.definition !== "undefined").map(word => {
               const { headword, id, part_of_speech, definition } = word;
               return (
                 <div className="wordCard" key={id}>
@@ -55,7 +54,7 @@ class App extends Component {
                   <p className="definition">{definition}</p>
                 </div>
               )
-          })
+            }) : null
         }
         </div>
 
@@ -66,3 +65,19 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+// list.map(word => {
+//   const { headword, id, part_of_speech, definition } = word;
+//   return (
+//     <div className="wordCard" key={id}>
+//       <div className="top">
+//         <p className="title">{headword}</p>
+//         <p className="part-of-speech">{part_of_speech}</p>
+//       </div>
+//       <p className="definition">{definition}</p>
+//     </div>
+//   )
+// }) : null
