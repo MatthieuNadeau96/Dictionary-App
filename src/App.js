@@ -37,11 +37,10 @@ class App extends Component {
       <div className="container">
         <h1>Dictionary</h1>
         <form onSubmit={this.submitHandler}>
-          <input placeholder="Search..." type="text" name="userWord"></input>
+          <input type="text" name="userWord"></input>
         </form>
 
         <div className="search-list">
-          { !this.state.isLoading && <h2>Search Results</h2> }
           {
             !isLoading && list.length > 0 ? list
               .filter(word => word.definition !== "undefined")
@@ -59,7 +58,9 @@ class App extends Component {
             }) : null
         }
         </div>
-        <h4><a href="/">Matthieu Nadeau</a></h4>
+        <h4><a href="https://github.com/MatthieuNadeau96" target="_blank" rel="noopener noreferrer">Created by Matthieu Nadeau</a></h4>
+        <h5><a href="https://vikaslalwani.com/" target="_blank" rel="noopener noreferrer">Inspired by Vikas Lalwani</a></h5>
+
       </div>
     );
   }

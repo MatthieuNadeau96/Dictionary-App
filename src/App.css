@@ -1,7 +1,7 @@
 .container {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   margin: 10% auto;
-  box-shadow: 1px 3px 4px 1px #eee;
+  box-shadow: 2px 5px 30px -10px #777;
   padding: 15px;
   position: relative;
 }
@@ -31,14 +31,37 @@ h4 {
   text-align: center;
   font-weight: 700;
   margin: 5% 0 2%;
-  font-size: 1.5em;
+  font-size: 0.8em;
 }
 
 h4 a {
   color: #222;
   text-decoration: none;
-  border-bottom: 1px solid skyblue;
   padding: 2px 4px;
+  transition: 100ms;
+}
+h4 a:hover {
+  background-color: rgba(240, 240, 240, .8);
+  border-bottom: 2px solid #00a8db;
+  border-radius: 4px;
+}
+
+h5 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.6em;
+}
+
+h5 a {
+  color: #222;
+  text-decoration: none;
+  padding: 2px 4px;
+  transition: 100ms;
+}
+h5 a:hover {
+  background-color: rgba(240, 240, 240, .8);
+  border-bottom: 2px solid #00a8db;
+  border-radius: 3px;
 }
 
 h2 {
@@ -48,9 +71,14 @@ h2 {
 
 .wordCard {
   display: block;
-  background-color: #eee;
+  background-color: rgb(249, 249, 249);
   padding: 10px;
   margin: 15px 0;
+  border-radius: 15px;
+  transition: 250ms ease-out;
+}
+.wordCard:hover {
+  box-shadow: 2px 5px 20px -10px #777;
 }
 
 .wordCard .top {
