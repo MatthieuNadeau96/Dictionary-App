@@ -3,34 +3,32 @@ import './App.css';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      list: []
-    }
+  state = {
+    list: [],
+    isLoading: true,
+    error: undefined
   }
 
-  componentDidMount() {
-    this.fetchData();
-  }
+  // TODO: If the word searched doesn't exist I want to add an error message
 
-  fetchData() {
-
-    fetch('http://api.pearson.com/v2/dictionaries/entries?headword=dog')
-    .then(response => response.json())
-    // .then(parsedJSON => console.log(parsedJSON.results))
-    .then(parsedJSON => parsedJSON.results.map(data => (
+  submitHandler = async (e) => {
+    e.preventDefault();
+    const userWord = e.target.elements.userWord.value;
+    const api_call = await fetch('http://api.pearson.com/v2/dictionaries/entries?headword=' + `${userWord}`)
+    const data = await api_call.json();
+    const list = data.results.map(data => (
       {
         headword: `${data.headword}`,
         id: `${data.id}`,
         part_of_speech: `${data.part_of_speech}`,
         definition: `${data.senses["0"].definition}`
       }
-    )))
-    .then(list => this.setState({ list, isLoading: false }))
-    .catch(error => console.log('parsing failed', error))
-
+    ))
+    this.setState({
+      list,
+      isLoading: false,
+      error: ""
+    })
   }
 
   render() {
@@ -38,12 +36,16 @@ class App extends Component {
     return (
       <div className="container">
         <h1>Dictionary</h1>
-        <input type="text"></input>
+        <form onSubmit={this.submitHandler}>
+          <input placeholder="Search..." type="text" name="userWord"></input>
+        </form>
 
         <div className="search-list">
-          <h2>Search Results</h2>
+          { !this.state.isLoading && <h2>Search Results</h2> }
           {
-            !isLoading && list.length > 0 ? list.filter(word => word.definition !== "undefined").map(word => {
+            !isLoading && list.length > 0 ? list
+              .filter(word => word.definition !== "undefined")
+              .map(word => {
               const { headword, id, part_of_speech, definition } = word;
               return (
                 <div className="wordCard" key={id}>
@@ -57,7 +59,6 @@ class App extends Component {
             }) : null
         }
         </div>
-
         <h4><a href="/">Matthieu Nadeau</a></h4>
       </div>
     );
