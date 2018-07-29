@@ -65,19 +65,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-
-// list.map(word => {
-//   const { headword, id, part_of_speech, definition } = word;
-//   return (
-//     <div className="wordCard" key={id}>
-//       <div className="top">
-//         <p className="title">{headword}</p>
-//         <p className="part-of-speech">{part_of_speech}</p>
-//       </div>
-//       <p className="definition">{definition}</p>
-//     </div>
-//   )
-// }) : null
