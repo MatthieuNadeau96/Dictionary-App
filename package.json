@@ -1,5 +1,6 @@
 {
   "name": "dictionary-app",
+  "homepage": "http://MatthieuNadeau96.github.io/Dictionary-App/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "deploy": "npm run build&&gh-pages -d build",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
