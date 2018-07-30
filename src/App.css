@@ -4,12 +4,14 @@
   box-shadow: 2px 5px 30px -10px #777;
   padding: 15px;
   position: relative;
+  max-width: 100%;
 }
 
 h1 {
   font-size: 3.5em;
   font-weight: 900;
   text-align: center;
+  width: 100%;
 }
 
 input {
@@ -21,9 +23,11 @@ input {
   resize: none;
   font-size: 1.5em;
   line-height: 1.5rem;
+  width: 100%;
 }
 
 *, *:before, *:after {
+  font-size: 100%;
   box-sizing: inherit;
 }
 
@@ -42,7 +46,7 @@ h4 a {
 }
 h4 a:hover {
   background-color: rgba(240, 240, 240, .8);
-  border-bottom: 2px solid #00a8db;
+  border-bottom: 1px solid #00a8db;
   border-radius: 2px;
 }
 
@@ -60,7 +64,7 @@ h5 a {
 }
 h5 a:hover {
   background-color: rgba(240, 240, 240, .8);
-  border-bottom: 2px solid #00a8db;
+  border-bottom: 1px solid #00a8db;
   border-radius: 2px;
 }
 
@@ -95,4 +99,10 @@ h2 {
 .wordCard .part-of-speech {
   font-size: 1em;
  font-style: italic;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+  }
 }
